@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PAASS フレームワーク（足関節RTP） - Physio Golazo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .branding-header {
+            display: none;
+        }
+
+        @media print {
+            .branding-header {
+                display: block;
+                text-align: center;
+                border-bottom: 2px solid var(--color-brand-primary);
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+
+            .branding-header h2 {
+                border: none;
+                background: none;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="header__logo">
+            <img src="../assets/logo/logo.png" alt="Physio Golazo">
+        </a>
+        <nav class="header__nav">
+            <a href="index.html">ツール一覧</a>
+        </nav>
+    </header>
+
+    <div class="page-wrapper">
+        <main class="container main-content">
+
+            <div class="branding-header">
+                <h2>Physio Golazo 足関節捻挫 RTP評価 (PAASS)</h2>
+            </div>
+
+            <div class="chapter-hero">
+                <span class="chapter-badge">ANKLE SPRAIN</span>
+                <h1>PAASS フレームワーク</h1>
+                <p class="chapter-subtitle">Return to Sport Evaluation for Ankle Sprain</p>
+            </div>
+
+            <div class="eval-form">
+                <!-- Pain -->
+                <div class="eval-section">
+                    <div class="eval-section__title">Pain (疼痛)</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="p1" class="eval-item__input">
+                        <label for="p1" class="eval-item__label">安静時の痛みが消失している</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="p2" class="eval-item__input">
+                        <label for="p2" class="eval-item__label">日常生活動作（歩行・階段等）で痛みがない</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="p3" class="eval-item__input">
+                        <label for="p3" class="eval-item__label">競技動作（ラン・カット）での痛みが許容範囲内</label>
+                    </div>
+                </div>
+
+                <!-- Ankle impairments -->
+                <div class="eval-section">
+                    <div class="eval-section__title">Ankle impairments (身体機能)</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="a1" class="eval-item__input">
+                        <label for="a1" class="eval-item__label">足関節の可動域（背屈・底屈等）が左右同等</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="a2" class="eval-item__input">
+                        <label for="a2" class="eval-item__label">筋力（底屈筋・腓骨筋群等）が左右同等</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="a3" class="eval-item__input">
+                        <label for="a3" class="eval-item__label">腫脹（腫れ）が消失、または管理されている</label>
+                    </div>
+                </div>
+
+                <!-- Athlete perception -->
+                <div class="eval-section">
+                    <div class="eval-section__title">Athlete perception (心理的準備状態)</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="ap1" class="eval-item__input">
+                        <label for="ap1" class="eval-item__label">選手自身が競技復帰に自信を持っている</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="ap2" class="eval-item__input">
+                        <label for="ap2" class="eval-item__label">患部に対する恐怖感や不安が少ない</label>
+                    </div>
+                </div>
+
+                <!-- Sensorimotor control -->
+                <div class="eval-section">
+                    <div class="eval-section__title">Sensorimotor control (感覚運動機能)</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sc1" class="eval-item__input">
+                        <label for="sc1" class="eval-item__label">片脚立ちバランス（静的）の安定性</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sc2" class="eval-item__input">
+                        <label for="sc2" class="eval-item__label">着地動作や動的安定性が正常である</label>
+                    </div>
+                </div>
+
+                <!-- Sport functional performance -->
+                <div class="eval-section">
+                    <div class="eval-section__title">Sport performance (競技パフォ)</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sp1" class="eval-item__input">
+                        <label for="sp1" class="eval-item__label">ホップテスト（片脚ジャンプ）等の機能レベル</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sp2" class="eval-item__input">
+                        <label for="sp2" class="eval-item__label">競技特異的な動き（アジリティ）がこなせる</label>
+                    </div>
+                </div>
+
+                <div class="eval-section">
+                    <div class="eval-section__title">総合コメント</div>
+                    <textarea class="form-input" rows="3" placeholder="復帰ステージや今後の注意点など"></textarea>
+                </div>
+            </div>
+
+            <div class="tool-actions">
+                <button class="btn-report" onclick="window.print()">
+                    レポートを出力する
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        document.querySelectorAll('.eval-item__input').forEach(input => {
+            input.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.classList.add('eval-item--checked');
+                } else {
+                    this.parentElement.classList.remove('eval-item--checked');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRT6 評価ツール - Physio Golazo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+    <style>
+        .branding-header {
+            display: none;
+        }
+
+        @media print {
+            .branding-header {
+                display: block;
+                text-align: center;
+                border-bottom: 2px solid var(--color-brand-primary);
+                margin-bottom: 20px;
+                padding-bottom: 10px;
+            }
+
+            .branding-header h2 {
+                border: none;
+                background: none;
+                margin: 0;
+                padding: 0;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <a href="../index.html" class="header__logo">
+            <img src="../assets/logo/logo.png" alt="Physio Golazo">
+        </a>
+        <nav class="header__nav">
+            <a href="index.html">ツール一覧</a>
+        </nav>
+    </header>
+
+    <div class="page-wrapper">
+        <main class="container main-content">
+
+            <div class="branding-header">
+                <h2>Physio Golazo 脳震盪評価レポート (CRT6)</h2>
+            </div>
+
+            <div class="chapter-hero">
+                <span class="chapter-badge">BRAIN CONCUSSION</span>
+                <h1>CRT6 評価ツール</h1>
+                <p class="chapter-subtitle">Concussion Recognition Tool 6</p>
+            </div>
+
+            <div class="eval-form" id="crt6-form">
+                <!-- Administrative Info -->
+                <div class="eval-section">
+                    <div class="eval-section__title">基本情報</div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                        <div>
+                            <label class="eval-item__label">選手名</label>
+                            <input type="text" class="form-input" placeholder="例：山田 太郎">
+                        </div>
+                        <div>
+                            <label class="eval-item__label">日時</label>
+                            <input type="datetime-local" class="form-input">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 1. Red Flags -->
+                <div class="eval-section"
+                    style="border: 2px solid var(--color-accent-danger); padding: 15px; border-radius: 8px;">
+                    <div class="eval-section__title" style="background: var(--color-accent-danger); color: white;">1.
+                        レッドフラッグ（緊急対応）</div>
+                    <p
+                        style="font-size: 0.85rem; color: var(--color-accent-danger); margin-bottom: 10px; font-weight: 700;">
+                        以下の項目が1つでもある場合は、直ちに競技から除外。救急要請を検討してください。
+                    </p>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf1" class="eval-item__input">
+                        <label for="rf1" class="eval-item__label">頸部の痛み、または圧痛</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf2" class="eval-item__input">
+                        <label for="rf2" class="eval-item__label">複視（ものが二重に見える）</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf3" class="eval-item__input">
+                        <label for="rf3" class="eval-item__label">四肢の脱力感、しびれ、うずき</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf4" class="eval-item__input">
+                        <label for="rf4" class="eval-item__label">激しい、または増悪する頭痛</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf5" class="eval-item__input">
+                        <label for="rf5" class="eval-item__label">けいれん、発作</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf6" class="eval-item__input">
+                        <label for="rf6" class="eval-item__label">意識消失、または意識レベルの低下</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="rf7" class="eval-item__input">
+                        <label for="rf7" class="eval-item__label">繰り返す嘔吐</label>
+                    </div>
+                </div>
+
+                <!-- 2. Observable Signs -->
+                <div class="eval-section">
+                    <div class="eval-section__title">2. 観察されるサイン</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="os1" class="eval-item__input">
+                        <label for="os1" class="eval-item__label">意識の消失（疑われる場合を含む）</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="os2" class="eval-item__input">
+                        <label for="os2" class="eval-item__label">姿勢の不安定、バランス障害、ふらつき</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="os3" class="eval-item__input">
+                        <label for="os3" class="eval-item__label">ぼーっとしている、虚脱した表情</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="os4" class="eval-item__input">
+                        <label for="os4" class="eval-item__label">混乱している、質問に適切に答えられない</label>
+                    </div>
+                </div>
+
+                <!-- 3. Symptoms -->
+                <div class="eval-section">
+                    <div class="eval-section__title">3. 本人申告の症状</div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sy1" class="eval-item__input">
+                        <label for="sy1" class="eval-item__label">頭痛、または頭が重い</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sy2" class="eval-item__input">
+                        <label for="sy2" class="eval-item__label">めまい、吐き気</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sy3" class="eval-item__input">
+                        <label for="sy3" class="eval-item__label">光や音への過敏</label>
+                    </div>
+                    <div class="eval-item">
+                        <input type="checkbox" id="sy4" class="eval-item__input">
+                        <label for="sy4" class="eval-item__label">霧がかかったような感じ、集中できない</label>
+                    </div>
+                </div>
+
+                <!-- Note -->
+                <div class="eval-section">
+                    <div class="eval-section__title">特記事項</div>
+                    <textarea class="form-input" rows="3" placeholder="受傷機転や周囲の状況など"></textarea>
+                </div>
+            </div>
+
+            <div class="tool-actions">
+                <button class="btn-report" onclick="window.print()">
+                    レポートを出力する
+                </button>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+        // Checkbox label mirroring for print
+        document.querySelectorAll('.eval-item__input').forEach(input => {
+            input.addEventListener('change', function () {
+                if (this.checked) {
+                    this.parentElement.classList.add('eval-item--checked');
+                } else {
+                    this.parentElement.classList.remove('eval-item--checked');
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
