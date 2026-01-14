@@ -588,6 +588,55 @@ tr:last-child td {
   overflow: hidden;
 }
 
+/* =========================================
+   Banner & CTA Components
+   ========================================= */
+
+.banner-wrapper {
+  margin: var(--space-8) 0;
+  display: block;
+  width: 100%;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  line-height: 0;
+  /* Remove image gap */
+  border: none !important;
+  /* Overwrite default link border */
+}
+
+.banner-wrapper:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.banner-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 0;
+  /* Handled by wrapper */
+}
+
+/* Header Specific (Inside Chapter Hero) */
+.chapter-hero .banner-wrapper {
+  margin: var(--space-6) auto;
+  max-width: 600px;
+}
+
+/* Footer Specific (Before Chapter Nav) */
+.banner-footer-container {
+  margin: var(--space-12) 0;
+  text-align: center;
+}
+
+.banner-wrapper--footer {
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* --------------------------------------------------------------------------
    9. Print / PDF Optimization (A4 Output)
    -------------------------------------------------------------------------- */
@@ -615,12 +664,16 @@ tr:last-child td {
     max-width: none;
   }
 
-  /* Hide navigation elements */
+  /* Hide navigation and banners */
   .header,
   .chapter-nav,
   .floating-btn,
   .banner,
-  .footer {
+  .footer,
+  .banner-wrapper,
+  .banner-footer-container,
+  .tool-actions,
+  .btn-report {
     display: none !important;
   }
 
