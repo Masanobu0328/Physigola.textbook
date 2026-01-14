@@ -104,6 +104,10 @@ body {
   background-color: var(--color-bg-body);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  /* Prevent horizontal scroll */
+  overflow-wrap: break-word;
+  /* Ensure clear wrapping */
 }
 
 a {
@@ -458,6 +462,8 @@ tr:last-child td {
   color: var(--color-accent-info);
   border-bottom: none;
   font-family: monospace;
+  word-break: break-all;
+  /* Force break specifically for long URLs */
 }
 
 /* --------------------------------------------------------------------------
